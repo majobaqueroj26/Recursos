@@ -1,0 +1,49 @@
+CREATE TABLE Trayecto (
+idTrayecto VARCHAR(6) NOT NULL,
+origen VARCHAR(3),
+destino VARCHAR(3),
+PRIMARY KEY (idTrayecto)
+)
+
+CREATE TABLE Fecha (
+idFecha DATE NOT NULL,
+anio INT,
+mes INT,
+PRIMARY KEY (idFecha)
+)
+
+CREATE TABLE Region (
+idRegion VARCHAR(255) NOT NULL,
+departamento VARCHAR(255),
+municipio VARCHAR(255),
+PRIMARY KEY (idRegion)
+)
+
+CREATE TABLE RegistroVuelos (
+idVuelo INT NOT NULL IDENTITY (1000, 1), 
+idFecha DATE, 
+idTrayecto VARCHAR(6),
+numeroVuelos INT,
+numeroPasajeros INT,
+numeroSillas INT,
+tipoVuelo CHAR(1),
+tipoTrafico VARCHAR(255),
+cargaOfrecida INT,
+cargaBordo INT,
+PRIMARY KEY (idVuelo),
+FOREIGN KEY (idFecha) REFERENCES Fecha(idFecha),
+FOREIGN KEY (idTrayecto) REFERENCES Trayecto(idTrayecto),
+)
+
+CREATE TABLE RegistroAeropuertos (
+sigla VARCHAR(3) NOT NULL, 
+idFechaConstruccion DATE,
+idFechaVigencia DATE,
+idRegion VARCHAR(255),
+nombre VARCHAR(255),
+categoria VARCHAR(255),
+PRIMARY KEY (sigla),
+FOREIGN KEY (idFechaConstruccion) REFERENCES Fecha(idFecha),
+FOREIGN KEY (idFechaVigencia) REFERENCES Fecha(idFecha),
+FOREIGN KEY (idRegion) REFERENCES Region(idRegion),
+)
