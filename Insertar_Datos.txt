@@ -10,5 +10,5 @@ VALUES ('R10001', 'Bogotá D.C', 'Bogotá D.C')
 INSERT INTO RegistroVuelos (idFecha, idTrayecto, numeroVuelos, numeroPasajeros, numeroSillas, tipoVuelo, tipoTrafico, cargaOfrecida, cargaBordo)
 VALUES ('1999-12-09', 'BOGCUC', 1804153, 4, 0, 'T', 'N', 0, 100 )
 
-INSERT INTO RegistroAeropuertos (sigla, idFechaConstruccion, idFechaVigencia, idRegion, nombre, categoria)
-VALUES ('BOG', '1999-12-09', null, 'R10001', 'EL DORADO', 'Internacional')
+INSERT INTO RegistroAeropuertos (sigla, idFechaConstruccion, idRegion, nombre, categoria)
+VALUES ('BOG', '1999-12-09', 'R10001', 'EL DORADO', 'Internacional')
