@@ -38,7 +38,6 @@ FOREIGN KEY (idTrayecto) REFERENCES Trayecto(idTrayecto),
 CREATE TABLE RegistroAeropuertos (
 sigla VARCHAR(3) NOT NULL, 
 idFechaConstruccion DATE,
-idFechaVigencia DATE,
 idRegion VARCHAR(255),
 nombre VARCHAR(255),
 categoria VARCHAR(255),
